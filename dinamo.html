@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinamo Run - Juego</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/trash.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .logo {
+            width: 150px;
+            margin-top: 18px;
+             margin-right: 200px;
+
+        }
+
+        .header {
+            height: 10%;
+
+        }
+
+        .header-btn {
+            text-decoration: none;
+            border-radius: 30px;
+            padding: 7px 20px;
+            margin-top: 15px;
+            color: #fff;
+            float: right;
+            background: #107afd;
+            font-weight: 600;
+        }
+
+        .movie-details {
+            margin: 3% 0;
+        }
+
+        .left-box {
+            color: #fff;
+        }
+
+        .left-box a {
+            text-decoration: none;
+            border-radius: 30px;
+            padding: 7px 20px;
+            margin-top: 35px;
+            color: #fff;
+            background: #107afd;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .movie-img {
+            height: 350px;
+            box-shadow: -4px 4px 5px 0 #000;
+            margin-left: 310px;
+        }
+
+        .series h3 {
+            color: #fff;
+        }
+
+        .series img {
+            width: 100%;
+            margin-top: 15px;
+            box-shadow: -4px 4px 5px 0 #000;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .series img:hover {
+            transform: translateY(-10px);
+        }
+
+        @media (max-width: 768px) {
+    .movie-details .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-img {
+        margin: 20px auto 0 auto;
+        height: auto;
+        width: 90%;
+    }
+
+    .left-box {
+        padding: 0 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 10px 0;
+        margin-right: 40px;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .header-btn {
+        float: none;
+        margin: 10px 0 0 0;
+        margin-right: 90px;
+    }
+
+    .series .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .series .col-md-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .series .col-6 {
+        padding: 5px;
+    }
+
+    .series img {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container header d-flex justify-content-between align-items-center">
+        <h2 class="logo" style="color: white;" >Desafio Lehnsen</h2>
+        <a href="index.html" class="header-btn" style="margin-left: 100px;">Inicio</a>
+    </div>
+
+    <div class="container movie-details">
+        <div class="row">
+            <div class="col-md-6 left-box">
+                <h1>TRASH CAT</h1>
+                <p>Acompaña a Trash Cat, un gato curioso y valiente, en su misión por limpiar los campos agrícolas, proteger los cultivos y enseñar prácticas sostenibles. Recorre distintos escenarios, recoge residuos, evita plagas y usa herramientas tecnológicas como sensores, drones y GPS para mejorar la productividad del terreno. Un juego educativo e interactivo que mezcla diversión y conciencia ambiental, inspirado en los principios de la agricultura de precisión.</p>
+
+            </div>
+            <div class="col-md-6">
+                <img src="img/dinamo.jpg" alt="Dinamo Run" class="movie-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="container series">
+        <h3>Más sobre Trash Cat:</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-6"><img src="img/juego2.jpg" alt="Extra 1"></div>
+                    <div class="col-6"><img src="img/juego3.jpg" alt="Extra 2"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-6"><img src="img/juego4.png" alt="Extra 3"></div>
+                    <div class="col-6"><img src="img/juego4.jpeg" alt="Extra 4"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-6"><img src="img/juego7.jpeg" alt="Extra 5"></div>
+                    <div class="col-6"><img src="img/juego8.jpeg" alt="Extra 6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

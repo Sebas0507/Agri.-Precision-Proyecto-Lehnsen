@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Agricultura - Colegio Lehnsen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/agri.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .header-content {
+            margin-bottom: 150px;
+            color: whitesmoke;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .header-content h2 {
+            font-size: 4vmin;
+        }
+
+        .line {
+            width: 150px;
+            height: 4px;
+            background: #8ec80f;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        .line2 {
+            width: 150px;
+            height: 4px;
+            background: #8ec80f;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        .header-content h1 {
+            font-size: 7vmin;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .ctn {
+            padding: 12px 25px;
+            background: #8ec80f;
+            border-radius: 30px;
+            color: whitesmoke;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .ctn:hover {
+            background: #7cb308;
+            transform: translateY(-3px);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: whitesmoke;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+
+        .nav-links li {
+            margin: 0 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8ec80f;
+        }
+
+        .menu-btn {
+            display: none;
+            width: 40px;
+            cursor: pointer;
+        }
+
+        .ani a:hover{
+            animation: wobble-horizontal-bottom 0.8s linear both;
+        }
+
+        .ani a {
+              display: inline-block; 
+        }
+
+
+        @keyframes wobble-horizontal-bottom {
+  0%, 100% {
+    transform: translateX(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+        /* Mobile */
+        @media only screen and (max-width: 850px) {
+            .navbar {
+                padding: 15px;
+            }
+
+            .logo {
+                position: static;
+                font-size: 20px;
+            }
+
+            .menu-btn {
+                display: block;
+                z-index: 20;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                flex-direction: column;
+                justify-content: center;
+                background: #484872;
+                margin-top: -100vh;
+                z-index: 15;
+            }
+
+            .nav-links.mobile-menu {
+                margin-top: 0;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .ctn {
+                padding: 10px 20px;
+            }
+        }
+
+        /*Eventos temas*/
+        section{
+            width: 80%;
+            margin: 80px auto;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 4vmin;
+            color: #49497e;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+           
+        }
+
+        .row .col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .events .row{
+            margin-top: 50px;
+
+        }
+
+        h4{
+            font-size: 3vmin;
+            margin: 20px auto;
+            color: #49497e;
+        }
+
+        p{
+         color: #49497e;
+         padding: 0px 40px;
+        }
+
+        /*Explore*/
+        .explore{
+            width: 100%;
+            height: 80vh;
+            background: url(img/sun.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .explore-content{
+            width: 60%;
+            padding: 50px;
+            color: whitesmoke;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .explore-content h1{
+            font-size: 7vmin;
+            text-align: center;
+            
+
+        }
+
+        .explore-content p{
+            color: white;
+        }
+
+        .explore-content .line{
+            margin-bottom: 50px;
+        }
+
+        /*CONCLUSION*/
+        .tours .image-gallery{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+        }
+
+
+        .tours .row .col{
+            width: 50%;
+        }
+
+        .image-gallery img{
+            max-width: 250px;
+            margin: 10px
+        }
+
+        .content-col{
+            width: 40%;
+        }
+
+        .image-col{
+            width: 60%;
+        }
+
+        .content-col h1{
+            font-size: 7vmin;
+            color: #484872;
+        }
+
+        .content-col .line{
+            margin-left: 240px;
+        }
+
+         .content-col p{
+            padding: 0;
+            margin: 30px auto;
+         }
+
+
+         /*FOOTER*/
+
+         .footer{
+            width: 100%;
+            min-height: 100px;
+            padding: 20px 80px;
+            margin: 0;
+            background: #484872;
+            text-align: center;
+
+         }
+
+         .footer p{
+            color: whitesmoke;
+            margin: 20px auto;
+            padding: 20px auto;
+         }
+
+         /*Animaciones GOD*/
+            img{
+                transition: transform .3s ease;
+            }
+
+            img:hover{
+                transform: scale(1.1);
+            }
+
+            .ctn:hover{
+                background: whitesmoke;
+                color: green;
+                box-shadow: 2px 2px 5px #00000056;
+            }
+
+            li:hover{
+                color: green;
+                cursor: zoom-out;
+            }
+
+
+
+
+
+
+
+
+         @media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    max-width: 100%;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .conclusion-container {
+    flex-direction: column;
+  }
+
+  .conclusion-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .conclusion-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .conclusion-row {
+    flex-direction: column;
+  }
+
+  .content-col,
+  .image-col {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Para pantallas muy pequeñas, una columna */
+  @media (max-width: 480px) {
+    .image-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .line2{
+    margin-right: 230px;
+  }
+
+  p{
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+.explore-content p {
+    margin-top: -40px;
+    width: 250px;
+}
+
+
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Colegio Lehnsen</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="ctn">INICIO</a></li>
+            <li class="ani"><a href="dinamo.html">TRASH DASH</a></li>
+        </ul>
+        <img src="img/menu-btn.png" alt="Menú" class="menu-btn">
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h2>Proyecto Lehnsen</h2>
+            <div class="line"></div>
+            <h1>Agricultura de Precisión:</h1>
+            <h2>Tecnología para el Futuro del Campo</h2>
+
+
+        </div>
+    </header>
+
+    <section class="events">
+        <div class="title">
+            <h1>¿Qué Queremos Lograr?</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="img/planta.jpg">
+                <h4> Objetivo General</h4>
+                <p>Promover la adopción de la agricultura de precisión en Guatemala como una herramienta complementaria al trabajo agrícola tradicional, orientada a mejorar la productividad, sostenibilidad y calidad de vida de los agricultores, sin reemplazar su papel fundamental en el proceso productivo.
+            </div>
+            <div class="col">
+                <img src="img/tecno.jpg">
+                <h4> Objetivos Específicos</h4>
+                <p>Informar a los agricultores y al público en general sobre los principios, tecnologías y beneficios de la agricultura de precisión en contextos locales; fomentar el interés de instituciones educativas, gobiernos locales y organizaciones agrícolas en implementar programas de formación y apoyo técnico; y generar conciencia sobre la importancia de modernizar la agricultura de forma inclusiva, respetando el conocimiento ancestral y el contexto socioeconómico guatemalteco.
+            </div>
+        </div>
+    </section>
+
+    <section class="explore">
+       <div class="explore-content">
+            <h1>Marco Teorico</h1>
+            <div class="line"></div>
+        <p>La agricultura sigue siendo una actividad esencial para el sustento económico de muchas familias guatemaltecas. Frente a los nuevos desafíos globales como el cambio climático, la escasez de recursos y la necesidad de una producción más eficiente y sostenible, la agricultura de precisión se presenta como una solución innovadora. Esta tecnología permite optimizar el uso de recursos como el agua, fertilizantes y energía, reduciendo el impacto ambiental y mejorando el rendimiento de los cultivos.
+
+Sin embargo, a pesar de sus beneficios, la agricultura de precisión aún es poco conocida en muchos sectores del país. Esta falta de información limita su adopción e impide que más agricultores aprovechen sus ventajas. Por ello, este proyecto busca acercar este conocimiento a través de medios accesibles como páginas web o videojuegos educativos, con el objetivo de informar, sensibilizar y despertar el interés en nuevas generaciones y comunidades rurales.
+
+       </div>
+    </section>
+
+<section class="tours">
+    <div class="row conclusion-row">
+        <div class="col content-col">
+            <h1>Recomendaciones</h1>
+            <div class="line2"></div>
+            <p>
+                Es fundamental difundir la importancia de la agricultura en la economía guatemalteca, destacando la necesidad de invertir en tecnologías que modernicen los procesos agrícolas y apoyen a los agricultores en su trabajo diario. Además, se recomienda aprovechar herramientas innovadoras como los juegos educativos, ya que permiten que los jóvenes aprendan de forma interactiva y entretenida, sin la presión de métodos tradicionales. También se sugiere impulsar el desarrollo de plataformas digitales accesibles, como aplicaciones móviles y sitios web intuitivos, que brinden información útil sobre el estado del clima, del suelo y recomendaciones de cultivo, incluso sin conexión a internet. Estas estrategias permitirán acercar el conocimiento a más personas y fomentar una agricultura más eficiente, sostenible e inclusiva.
+            </p>
+        </div>
+        <div class="col image-col">              
+            <div class="image-gallery">
+                <img src="img/juego.png" alt="Imagen 1">
+                <img src="img/dron.jpg" alt="Imagen 2">
+                <img src="img/dron2.jpg" alt="Imagen 3">
+                <img src="img/dron3.jpg" alt="Imagen 4">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <p>Copyright &copy; 2025 || Diego Lopez </p>
+</section>
+
+
+
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-menu');
+        });
+
+        // Cerrar el menú al hacer clic en un enlace (solo en móvil)
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 850) {
+                    navLinks.classList.remove('mobile-menu');
+                }
+            });
+        });
+
+        // Cerrar el menú al cambiar el tamaño de la ventana
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 850) {
+                navLinks.classList.remove('mobile-menu');
+            }
+        });
+    </script>
+</body>
+</html>
